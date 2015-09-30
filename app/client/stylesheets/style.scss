@@ -1,0 +1,132 @@
+/* CSS declarations go here */
+
+body {
+	a, a:hover, a:focus, a:visited, a[href]:after {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	color: #2C3E50;
+
+	overflow: hidden;
+}
+nav {
+  border-bottom: 10px solid #E85A60;
+}
+nav .brand-logo {
+  position: relative;
+}
+.glyphicon {
+  top: 4px;
+}
+
+#map {
+	height: 540px;
+}
+
+.spacer {
+
+	clear:both;
+	width: 0;
+}
+
+.text-muted {
+	color: #2C3E50;
+}
+
+.row .col.card {
+	padding: 0;
+	margin: 20px;
+}
+
+.card.card-list-video{
+	height: 540px;
+	overflow-y: auto;
+}
+
+.modal {
+  overflow-y: hidden;
+  width: 310px;
+}
+
+.modal-address{
+
+}
+
+video {
+  margin-top: 10px;
+}
+
+.empty-video {
+	height: 400px;
+	line-height: 400px;
+	margin-left: none;
+	margin-right: none;
+	width: 100%;
+}
+
+
+
+
+
+
+.list-time {
+	float: left;
+	width: 30%;
+	margin-right: 5%;
+}
+
+.list-address {
+	white-space: pre-wrap;
+	max-width: 65%;
+	float: left;
+}
+
+
+
+/* list view */
+.list-video {
+	border-bottom: 1px solid #ee6e73;
+	cursor: pointer;
+	padding: 10px;
+}
+
+.list-video:hover {
+	background-color: #f18589;
+	color: white;
+
+	.text-muted {
+		color: white;
+	}
+}
+.modal {
+  max-height: 395px;
+}
+
+.modal .modal-footer {
+  text-align: center;
+  width: 100%;
+  background-color: #007AA3;
+  opacity: 0.8;
+  height: 30px;
+  border-bottom: 8px solid #00698C;
+}
+.modal .modal-address {
+  text-align: center;
+  color: #ffffff;
+}
+
+.modal .modal-content {
+	border: none;
+	border-radius: none;
+	box-shadow: none;
+	height: auto;
+	text-align: center;
+  padding: 0;
+}
+
+.modal .modal-close {
+  position: relative;
+  right: 10px;
+  top: -10px;
+}
