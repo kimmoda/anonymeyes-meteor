@@ -11,18 +11,19 @@ body {
 	overflow: hidden;
 }
 nav {
-  border-bottom: 10px solid #E85A60;
+	border-bottom: 10px solid #E85A60;
 }
 nav .brand-logo {
-  position: relative;
+	position: relative;
+	font-size: 200%;
 }
 
 .download-app{
-	font-size: 100%;
+	font-size: 120%;
 }
 
 .glyphicon {
-  top: 4px;
+	top: 4px;
 }
 
 #map {
@@ -50,8 +51,8 @@ nav .brand-logo {
 }
 
 .modal {
-  overflow-y: hidden;
-  width: 310px;
+	overflow-y: hidden;
+	width: 310px;
 }
 
 .modal-address{
@@ -59,7 +60,7 @@ nav .brand-logo {
 }
 
 video {
-  margin-top: 10px;
+	margin-top: 10px;
 }
 
 .empty-video {
@@ -103,20 +104,20 @@ video {
 	}
 }
 .modal {
-  max-height: 395px;
+	max-height: 395px;
 }
 
 .modal .modal-footer {
-  text-align: center;
-  width: 100%;
-  background-color: #007AA3;
-  opacity: 0.8;
-  height: 30px;
-  border-bottom: 8px solid #00698C;
+	text-align: center;
+	width: 100%;
+	background-color: #007AA3;
+	opacity: 0.8;
+	height: 30px;
+	border-bottom: 8px solid #00698C;
 }
 .modal .modal-address {
-  text-align: center;
-  color: #ffffff;
+	text-align: center;
+	color: #ffffff;
 }
 
 .modal .modal-content {
@@ -125,11 +126,11 @@ video {
 	box-shadow: none;
 	height: auto;
 	text-align: center;
-  padding: 0;
+	padding: 0;
 }
 
 .modal .modal-close {
-  position: relative;
-  right: 10px;
-  top: -10px;
+	position: relative;
+	right: 10px;
+	top: -10px;
 }
