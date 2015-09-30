@@ -20,3 +20,5 @@ nemo64:bootstrap
 less
 materialize:materialize@=0.97.0
 fourseven:scss
+iron:router
+ejson
