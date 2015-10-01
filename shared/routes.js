@@ -3,20 +3,26 @@ Router.configure({
 });
 
 Router.route('/', function(){
+	this.render('home');
 	this.render('homeHeader', {to: 'header'});
+}, {
+	name: 'home'
 });
 
 
 Router.route('/new_recording', {where: 'server'})
 .post(function(){
+	var params = this.params;
+	var filename = params.filename;
 
+	Meteor.call('newRecording', filename);
 });
 
 Router.route('/new_video', {where: 'server'})
 .post(function(){
 	var params = this.params;
 
-	var fileName = params.filename;
+	var filename = params.filename;
 
-
+	Meteor.call('newUpload', filename);
 });
