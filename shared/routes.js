@@ -6,16 +6,62 @@ Router.route('/', function(){
 	this.render('home');
 	this.render('homeHeader', {to: 'header'});
 }, {
-	name: 'home'
+	name: 'home',
+	onBeforeAction: function(){
+			console.log('beforeAction');
+
+		function geoSuccess(position) {
+			Session.set('location', position.coords);
+			console.log('geoSuccess');
+		};
+
+		function geoError() {
+			var location = {
+				latitude: 43.47284,
+				longitude: -80.54027
+			};
+
+			Session.set('location', location);
+			console.log('geoError');
+
+		};
+
+		var geoOptions = {
+			enableHighAccuracy: false,
+			maximumAge: 30000,
+			timeout: 27000
+		};
+
+		if ("geolocation" in navigator) {
+			navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
+		} else {
+			geoError();
+		}
+
+		this.next();
+	}
 });
 
 
 Router.route('/new_recording', {where: 'server'})
 .post(function(){
-	var params = this.params;
-	var filename = params.filename;
 
-	Meteor.call('newRecording', filename);
+	var body = this.request.body;
+
+	var filename = body.filename;
+
+	console.log(filename);
+
+	Meteor.call('newRecording', filename, function(error, results){
+		if (error){
+			throw new Meteor.Error("new-recording-failed", "New recording could not be stored.");
+		}
+		else{
+			var videoId = results;
+			console.log(videoId);
+			Meteor.call('addMarker', Videos.findOne(videoId));
+		}
+	});
 });
 
 Router.route('/new_video', {where: 'server'})

@@ -24,3 +24,5 @@ iron:router
 ejson
 momentjs:moment
 insecure
+aldeed:geocoder
+check
