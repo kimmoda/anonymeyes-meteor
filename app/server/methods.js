@@ -71,6 +71,6 @@ Meteor.methods({
 			uploaded: true
 		};
 
-		Videos.update(query, {$set: data});
+		return Videos.update(query, {$set: data});
 	}
 });
