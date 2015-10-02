@@ -52,6 +52,9 @@ Router.route('/new_recording', {where: 'server'})
 .post(function(){
 
 	var body = this.request.body;
+	var response = this.response;
+
+	response.setHeader('Content-Type', 'application/json');
 
 	var filename = body.filename;
 
@@ -60,30 +63,53 @@ Router.route('/new_recording', {where: 'server'})
 	Meteor.call('newRecording', filename, function(error, results){
 		if (error){
 			throw new Meteor.Error("new-recording-failed", "New recording could not be stored.");
+			var message = {
+				url: '/new_recording',
+				status: 'failure'
+			};
 		}
 		else{
 			var videoId = results;
 			console.log('Returned video id: ' + videoId);
+			var message = {
+				url: '/new_recording',
+				status: 'success'
+			};
 		}
+		response.end(JSON.stringify(message));
 	});
 });
 
 Router.route('/new_video', {where: 'server'})
 .post(function(){
+
 	var body = this.request.body;
+	var response = this.response;
+
+	response.setHeader('Content-Type', 'application/json');
 
 	var filename = body.filename;
+
 
 	console.log('New video uploaded for: ' + filename);
 
 	Meteor.call('newUpload', filename, function(error, results){
 		if (error){
 			throw new Meteor.Error("new-video-upload-failed", "New video could not be uploaded.");
+			var message = {
+				url: '/new_video',
+				status: 'success'
+			};
 		}
 		else{
 			var videoId = results;
 			console.log('Returned video id: ' + videoId);
-			// Meteor.call('addMarker', Videos.findOne(videoId));
+			var message = {
+				url: '/new_video',
+				status: 'failure'
+			};
 		}
+
+		response.end(JSON.stringify(message));
 	});
 });
