@@ -59,7 +59,7 @@ Router.route('/new_recording', {where: 'server'})
 		else{
 			var videoId = results;
 			console.log(videoId);
-			Meteor.call('addMarker', Videos.findOne(videoId));
+			// Meteor.call('addMarker', Videos.findOne(videoId));
 		}
 	});
 });
