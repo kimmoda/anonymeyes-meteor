@@ -1,0 +1,19 @@
+<template name="videoModal">
+	<div class="modal video-modal" role="dialog">
+		<div class="modal-content" style="{padding: 0px;}">
+			{{#if videoExists}}
+			<video width="288" height="352" controls>
+				<source src="{{getVideoFilename}}" type="video/mp4"/>
+			</video>
+			{{else}}
+			<div class="empty-video">
+				The video is processing...
+			</div>
+			{{/if}}
+			<div class="spacer"></div>
+			<div class="modal-footer">
+				<span class="modal-address">{{getVideoAddress}}</span>
+			</div>
+		</div>
+	</div>
+</template>

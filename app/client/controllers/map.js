@@ -36,6 +36,12 @@ Template.map.rendered = function(){
 					position: new google.maps.LatLng(video.latitude, video.longitude),
 					animation: google.maps.Animation.DROP,
 					map: map
+				});	
+
+				// Click listener for markers
+				google.maps.event.addListener(marker, 'click', function(){
+					Session.set('currentVideo', video);
+					$('.video-modal').openModal();
 				});
 
 				marker.setMap(map);
