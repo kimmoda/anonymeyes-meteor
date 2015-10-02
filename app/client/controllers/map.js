@@ -34,7 +34,6 @@ Template.map.rendered = function(){
 			videos.forEach(function (video) {
 				var marker = new google.maps.Marker({
 					position: new google.maps.LatLng(video.latitude, video.longitude),
-					animation: google.maps.Animation.DROP,
 					map: map
 				});	
 

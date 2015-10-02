@@ -71,9 +71,9 @@ Router.route('/new_recording', {where: 'server'})
 
 Router.route('/new_video', {where: 'server'})
 .post(function(){
-	var params = this.params;
+	var body = this.request.body;
 
-	var filename = params.filename;
+	var filename = body.filename;
 
 	Meteor.call('newUpload', filename);
 });

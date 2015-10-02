@@ -62,7 +62,13 @@ nav .brand-logo {
 }
 
 video {
-	margin-top: 10px;
+	vertical-align: middle;
+}
+
+.video-wrapper {
+	height: 400px;
+	line-height: 400px;
+	width: 100%;
 }
 
 .empty-video {

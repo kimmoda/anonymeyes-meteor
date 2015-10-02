@@ -2,9 +2,11 @@
 	<div class="modal video-modal" role="dialog">
 		<div class="modal-content" style="{padding: 0px;}">
 			{{#if videoExists}}
-			<video width="288" height="352" controls>
-				<source src="{{getVideoFilename}}" type="video/mp4"/>
-			</video>
+			<div class="video-wrapper">
+				<video width="288" height="352" controls>
+					<source src="{{getVideoFilename}}" type="video/mp4"/>
+				</video>
+			</div>
 			{{else}}
 			<div class="empty-video">
 				The video is processing...

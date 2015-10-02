@@ -13,7 +13,7 @@ Template.videoModal.helpers({
 		var currentVideo = Session.get('currentVideo');
 
 		if (currentVideo)
-			return currentVideo.filename;
+			return '/videos/' + currentVideo.filename;
 		else
 			throw new Meteor.Error("current-video-dne", "No videos are currently selected.");
 	},

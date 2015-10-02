@@ -61,7 +61,7 @@ Meteor.methods({
 
 	'newUpload': function(filename){
 
-		match(filename, String);
+		check(filename, String);
 
 		var query = {
 			filename: filename
