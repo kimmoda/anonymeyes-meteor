@@ -8,10 +8,15 @@ Router.route('/', function(){
 }, {
 	name: 'home',
 	onBeforeAction: function(){
-			console.log('beforeAction');
+		console.log('beforeAction');
 
 		function geoSuccess(position) {
-			Session.set('location', position.coords);
+			var location = {
+				latitude: position.coords.latitude,
+				longitude: position.coords.longitude
+			};
+
+			Session.set('location', location);
 			console.log('geoSuccess');
 		};
 
@@ -32,7 +37,7 @@ Router.route('/', function(){
 			timeout: 27000
 		};
 
-		if ("geolocation" in navigator) {
+		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
 		} else {
 			geoError();
