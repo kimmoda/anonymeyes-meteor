@@ -14,6 +14,7 @@ Template.videoItem.helpers({
 Template.videoItem.events({
 	'click .video-list-item': function(){
 		Session.set('currentVideo', this);
+		console.log(Session.get('currentVideo'));
 		$('.video-modal').openModal();
 	}
 });
