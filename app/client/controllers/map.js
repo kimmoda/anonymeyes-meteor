@@ -40,6 +40,8 @@ Template.map.rendered = function(){
 				// Click listener for markers
 				google.maps.event.addListener(marker, 'click', function(){
 					Session.set('currentVideo', video);
+					$('.selected-video-source').attr('src', '/videos/' + video.filename);
+					$('.selected-video-frame').load();
 					$('.video-modal').openModal();
 				});
 

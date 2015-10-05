@@ -3,8 +3,8 @@
 		<div class="modal-content" style="{padding: 0px;}">
 			{{#if videoExists}}
 			<div class="video-wrapper">
-				<video width="288" height="352" controls>
-					<source src="{{getVideoFilename}}" type="video/mp4"/>
+				<video width="288" height="352" controls class="selected-video-frame">
+					<source src="{{getVideoFilename}}" type="video/mp4" class="selected-video-source"/>
 				</video>
 			</div>
 			{{else}}
@@ -14,9 +14,7 @@
 			{{/if}}
 			<div class="spacer"></div>
 			<div class="modal-footer">
-				<!-- <span class="modal-address">{{getVideoAddress}}</span> -->
-				<span class="modal-address">{{getVideoFilename}}</span>
-
+				<span class="modal-address">{{getVideoAddress}}</span>
 			</div>
 		</div>
 	</div>
